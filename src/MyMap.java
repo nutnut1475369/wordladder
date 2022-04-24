@@ -3,19 +3,20 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MyMap {
-    int wordLenght;
+    protected int wordLenght;
+    protected HashMap<String, List<String>> map = new HashMap<>();
 
     public MyMap(int wl) {
         wordLenght = wl;
     }
 
-    public void checkAndAdd(HashMap<String, List<String>> hm, String w, StringBuilder wb){
-        if (hm.containsKey(wb.toString())){
-            if (!hm.get(wb.toString()).contains(w)) hm.get(wb.toString()).add(w);
+    public void checkAndAdd(String w, StringBuilder wb){
+        if (map.containsKey(wb.toString())){
+            if (!map.get(wb.toString()).contains(w)) map.get(wb.toString()).add(w);
         }else {
             List<String> ts = new ArrayList<>();
             ts.add(w);
-            hm.put(wb.toString(),ts);
+            map.put(wb.toString(),ts);
         }
     }
 }

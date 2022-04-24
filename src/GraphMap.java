@@ -6,7 +6,6 @@ import org.jgrapht.graph.SimpleWeightedGraph;
 import java.util.*;
 
 public class GraphMap extends MyMap{
-    HashMap<String, List<String>> map = new HashMap<>();
     SimpleWeightedGraph<String, DefaultWeightedEdge> graph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
 
     public GraphMap(int wl) {
@@ -17,12 +16,11 @@ public class GraphMap extends MyMap{
         for(int i = 0; i<w.length(); i++) {
             StringBuilder word_temp2 = new StringBuilder(w);
             word_temp2.setCharAt(i,'_');
-            checkAndAdd(map,w,word_temp2);
+            checkAndAdd(w,word_temp2);
         }
     }
     public void createGraph(){
-        Set<Map.Entry<String, List<String>>> entries = map.entrySet();
-        Iterator<Map.Entry<String, List<String>>> iterator = entries.iterator();
+        Iterator<Map.Entry<String, List<String>>> iterator = map.entrySet().iterator();
         Map.Entry<String, List<String>> entry;
         while (iterator.hasNext()){
             entry = iterator.next();
@@ -39,6 +37,7 @@ public class GraphMap extends MyMap{
         }
     }
     public void shortestPath(String w1,String w2) {
+
         if (graph.containsVertex(w1)&&graph.containsVertex(w2)){
             DijkstraShortestPath<String, DefaultWeightedEdge> shortestPaths = new DijkstraShortestPath<>(graph);
             List<String> stringAnswer = shortestPaths.getPath(w1,w2).getVertexList();
