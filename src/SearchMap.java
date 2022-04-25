@@ -23,6 +23,7 @@ public class SearchMap extends MyMap {
         ArrayList<String> wordSearch = new ArrayList<>();
         StringBuilder preword = new StringBuilder(sw);
         preword.append("_".repeat(wordLenght - sw.length()));
+        System.out.print(preword);
         try {
             wordSearch.addAll(map.get(preword.toString()));
         } catch (NullPointerException ignored) {

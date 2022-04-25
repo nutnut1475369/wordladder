@@ -29,9 +29,10 @@ public class GraphMap extends MyMap{
             }
             for (int i = 0; i<entry.getValue().size()-1; i++) {
                 int w1 = wordToAscii(entry.getValue().get(i));
+                String fw = entry.getValue().get(i);
                 for (int j = 0; j<entry.getValue().size()-1; j++){
                     if (i==j) j++;
-                    Graphs.addEdgeWithVertices(graph,entry.getValue().get(i),entry.getValue().get(j),Math.abs(w1-wordToAscii(entry.getValue().get(j))));
+                    Graphs.addEdgeWithVertices(graph,fw,entry.getValue().get(j),Math.abs(w1-wordToAscii(entry.getValue().get(j))));
                 }
             }
         }

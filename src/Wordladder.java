@@ -37,9 +37,6 @@ public class Wordladder {
                 word2 = input.nextLine().toLowerCase();
             } while (word1.length() < wordLenght || word2.length() < wordLenght || isNotAlphabet(word1) || isNotAlphabet(word2));
             graphMap.shortestPath(word1, word2);
-            System.out.println("You can use \"_\" between letters for instead of any letters. ");
-            System.out.println("\nInput: a_e\nOutput: axe ave ace ape awe age aye ale ane are ate \n");
-            System.out.println("But don't use like this \"_a_b_c_d\"\n");
             System.out.println("Search = ");
             String searchWord;
             do {
