@@ -18,10 +18,6 @@ public class SearchMap extends MyMap {
                 word_temp_bw.setCharAt(w.length()-j,'_');
                 word_temp_fw_under.setCharAt(j-1,word_temp.charAt(j-1));
                 word_temp_bw_under.setCharAt(w.length()-j,word_temp.charAt(w.length()-j));
-                System.out.println(word_temp_fw);
-                System.out.println(word_temp_bw);
-                System.out.println(word_temp_fw_under);
-                System.out.println(word_temp_bw_under);
                 checkAndAdd(w,word_temp_fw);
                 checkAndAdd(w,word_temp_bw);
                 checkAndAdd(w,word_temp_fw_under);

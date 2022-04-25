@@ -52,7 +52,7 @@ public class GraphMap extends MyMap{
             System.out.printf("Cannot transform %s into %s\n",w1,w2);
         }
     }
-        public int wordToAscii(String w){
+    public int wordToAscii(String w){
         int total = 0;
         for(int i = 0; i < w.length() ; i++){
             int ascii = w.charAt(i);

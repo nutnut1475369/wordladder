@@ -35,7 +35,7 @@ public class Wordladder {
                 word1 = input.nextLine().toLowerCase();
                 System.out.println("Enter 5-letter word 2 =");
                 word2 = input.nextLine().toLowerCase();
-            } while (word1.length() < wordLenght || word2.length() < wordLenght || isNotAlphabet(word1) || isNotAlphabet(word2));
+            } while (word1.length() != wordLenght || word2.length() != wordLenght || isNotAlphabet(word1) || isNotAlphabet(word2));
             graphMap.shortestPath(word1, word2);
             System.out.println("Search = ");
             String searchWord;
@@ -49,9 +49,11 @@ public class Wordladder {
             } else {
                 System.out.println("not have any word relate with your search");
             }
-            System.out.println("Do you need to run again? (Y/N)");
-            check = input.nextLine().toLowerCase();
-        } while (check.equals("y"));
+            do {
+                System.out.println("Do you need to run again? (Y/N)");
+                check = input.nextLine().toLowerCase();
+            }while (!check.equalsIgnoreCase("y")&&!check.equalsIgnoreCase("n"));
+        } while (check.equalsIgnoreCase("y"));
     }
 
     public static boolean isNotAlphabet(String s) {
